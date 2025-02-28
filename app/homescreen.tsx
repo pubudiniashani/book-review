@@ -4,28 +4,37 @@ import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 const books = [
     {
         id: '1',
-        title: 'Sherlock Holmes',
-        author: 'James Clear',
+        title: 'Indraneela Manikkya',
+        author: 'Chandana Mendis',
         image: require('../assets/image 1.jpg'),
 
     },
     {
         id: '2',
-        title: 'The Power of Now',
-        author: 'Eckhart Tolle',
+        title: 'Bihisunu Nimnaya',
+        author: 'Chandana Mendis',
         image: require('../assets/image 2.jpg'),
 
     },
     {
-        id: '2',
-        title: 'The Power of Now',
-        author: 'Eckhart Tolle',
+        id: '3',
+        title: 'Pudgalikai Rahasigathai',
+        author: 'Chandana Mendis',
+        image: require('../assets/image 3.jpeg'),
 
     },
     {
-        id: '2',
-        title: 'The Power of Now',
-        author: 'Eckhart Tolle',
+        id: '4',
+        title: 'Apuru Iskole Apuru Dawas',
+        author: 'Sudath Rohan',
+        image: require('../assets/image 4.jpeg'),
+
+    },
+    {
+        id: '5',
+        title: 'Hari Apuru Iskole ',
+        author: 'Sudath Rohan',
+        image: require('../assets/image 5.jpg'),
 
     },
 
