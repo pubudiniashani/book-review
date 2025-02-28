@@ -1,8 +1,13 @@
 import HomeScreen from "./homescreen";
+import LoginScreen from "./loginscreen";
+import {useState} from "react";
+
 
 export default function Index() {
 
-    return (
-        <HomeScreen/>
-    );
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    return isLoggedIn ? <HomeScreen /> : <LoginScreen onLogin={() => setIsLoggedIn(true)
+    } />
+
 }
