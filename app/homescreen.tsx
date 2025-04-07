@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView, TextInput, Button} from 'react-native';
 
 const books = [
     {
@@ -46,10 +46,10 @@ const HomeScreen = ({ navigation }) => {
             {books.map((item) => (
                 <TouchableOpacity
                     key={item.id}
-                    onPress={() => navigation.navigate('BookDetails', { book: item })}
+                    // onPress={() => navigation.navigate('BookDetails', { book: item })}
                     style={{
                         marginVertical: 10,
-                        backgroundColor: '#fff',
+                        backgroundColor: '#e2afff',
                         borderRadius: 10,
                         padding: 10,
                     }}
@@ -57,6 +57,24 @@ const HomeScreen = ({ navigation }) => {
                     <Image source={item.image} style={{ width: 100, height: 150, borderRadius: 10 }} />
                     <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{item.title}</Text>
                     <Text style={{ fontSize: 14, color: 'gray' }}>{item.author}</Text>
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', marginVertical: 5 }}>Share your review on this book</Text>
+                    <TextInput
+                        style={{
+                            width: '100%',
+                            height: 100,
+                            borderWidth: 1,
+                            borderRadius: 10,
+                            padding: 10,
+                            fontSize: 16,
+                            backgroundColor: '#fff',
+                            marginBottom: 10,
+                            textAlignVertical: 'top',
+                        }}
+                        placeholder="Write your review here..."
+                        multiline
+                        numberOfLines={4}
+                    />
+                    <Button title="Submit" onPress={() => console.log('Review Submitted!')} />
                 </TouchableOpacity>
             ))}
         </ScrollView>
