@@ -6,7 +6,7 @@ const LoginScreen = ({ onLogin }) => {
     const [password, setPassword] = useState('');
 
     function handleLogin() {
-        if (username === 'User' && password === '1020WE') {
+        if (username === 'User' && password === '1020') {
             onLogin();
         }
     }

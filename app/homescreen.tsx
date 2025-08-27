@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-// Using Open Library API for book data
 const API_URL = 'https://openlibrary.org/search.json?title=';
 
 const HomeScreen = ({ navigation }) => {
@@ -22,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('best sellers');
 
-    // Fetch books from API
+
     const fetchBooks = async (query = 'best sellers') => {
         try {
             setLoading(true);
@@ -34,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
                     id: book.key || `book-${index}`,
                     title: book.title || 'Unknown Title',
                     author: book.author_name ? book.author_name[0] : 'Unknown Author',
-                    // Using placeholder images since Open Library doesn't always provide cover images
+
                     image: book.cover_i
                         ? { uri: `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` }
                         : require('../assets/placeholder.jpeg'),
@@ -42,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
                 }));
                 setBooks(formattedBooks);
             } else {
-                // Fallback data if API doesn't return results
+
                 setBooks(fallbackBooks);
             }
         } catch (error) {
@@ -61,7 +60,7 @@ const HomeScreen = ({ navigation }) => {
     const handleReviewSubmit = (bookId) => {
         if (reviews[bookId] && reviews[bookId].trim()) {
             Alert.alert('Success', 'Your review has been submitted!');
-            // Here you would typically send the review to your backend
+
         } else {
             Alert.alert('Error', 'Please write a review before submitting.');
         }
@@ -153,7 +152,7 @@ const HomeScreen = ({ navigation }) => {
     );
 };
 
-// Fallback data in case API fails
+
 const fallbackBooks = [
     {
         id: '1',
